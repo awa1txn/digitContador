@@ -1,0 +1,14 @@
+/front-end/node_modules
+/front-end/.env
+/front-end/client_secret.json
+/front-end/.svelte-kit
+!/front-end/.env.example
+/front-end/vite.config.js.timestamp-*
+/front-end/vite.config.ts.timestamp-*
+/front-end.DS_Store
+/front-end/build
+/front-end/package
+
+
+/back-end/node_modules
+/back-end/.env
