@@ -4,3 +4,4 @@ import { writable } from 'svelte/store';
 
 
 export const email = writable('');
+export const authStage = writable(false)

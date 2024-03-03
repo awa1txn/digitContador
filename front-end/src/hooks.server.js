@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { SvelteGoogleAuthHook} from 'svelte-google-auth/server';
 
 // Import client credentials from json file
