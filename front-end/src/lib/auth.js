@@ -1,4 +1,4 @@
-import {email, authStage} from "$lib/store"
+import {email, authStage, authSuccess} from "$lib/store"
 
 
 export async function pageProtection() {
@@ -14,6 +14,7 @@ export async function pageProtection() {
             authStage.update((n)=> n = true)
         }
         })
+        authSuccess.update((n)=> n = true)
     } catch (error) {
         console.error('Error fetching data:', error);
     }
