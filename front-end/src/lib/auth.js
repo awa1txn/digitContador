@@ -8,6 +8,9 @@ export async function pageProtection() {
         const data = await response.json();
         email.subscribe((value)=>{
         if(data.owner !== value){
+            console.log('owner:',data.owner,'match:', value, 'equation:',data.owner !== value)
+            
+
             authStage.update((n)=> n = true)
         }
         })
