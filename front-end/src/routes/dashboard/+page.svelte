@@ -2,6 +2,7 @@
 // @ts-nocheck
 
     import { Line } from 'svelte-chartjs'
+    import apiClient from '$lib/apiClient';
 
     import {
     Chart as ChartJS,
@@ -13,6 +14,7 @@
     PointElement,
     CategoryScale,
   } from 'chart.js';
+  import { onMount } from 'svelte';
 
   ChartJS.register(
     Title,
@@ -46,10 +48,20 @@
       pointHoverBorderWidth: 1,
       pointRadius: 1,
       pointHitRadius: 10,
-      data: [12, 25, 31, 11, 36, 39, 40],
+      data: [12124, 25412, 32141, 11124, 36422, 39222, 40124],
     }
   ],
 };
+
+onMount(async ()=>{
+    try{
+        const res = await apiClient('owner');
+        console.log(res)
+    }
+    catch(e){
+        console.log(e)
+    }
+})
 </script>
 
 
@@ -57,7 +69,8 @@
     <header class="bg-gray-800 text-white p-4">
         <p class="text-center text-green-500">Authorized in digitContador</p>
         <div class="w-full flex justify-center">
-            <button type="submit" class="bg-green-500 text-white px-4 py-2 rounded-full hover:bg-green-600">
+            <button
+             type="submit" class="bg-green-500 text-white px-4 py-2 rounded-full hover:bg-green-600">
                 Submit networth
             </button>
         </div>
@@ -88,21 +101,37 @@
     </div>
 
     <!-- Block 3 at the bottom -->
-    <div class="bg-purple-3 p-4 rounded-lg h-fit">
+    <div class="bg-purple-3 p-4 rounded-lg h-fit overflow-x-auto">
         <h2 class="text-white text-xl">RAW TABLE</h2>
         <table class="w-full table-auto">
             <thead>
                 <tr>
-                    <th class="p-2">Header 1</th>
-                    <th class="p-2">Header 2</th>
-                    <th class="p-2">Header 3</th>
-                    <th class="p-2">Header 4</th>
-                    <th class="p-2">Header 5</th>
+                    <th class="p-2">Cash</th>
+                    <th class="p-2">Card</th>
+                    <th class="p-2">Crypto</th>
+                    <th class="p-2">Netowrth</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <td class="p-2 text-center">293 UAH</td>
+                    <td class="p-2 text-center">293 UAH</td>
+                    <td class="p-2 text-center">293 UAH</td>
+                    <td class="p-2 text-center">293 UAH</td>
+                </tr>
+                <tr>
+                    <td class="p-2 text-center">293 UAH</td>
+                    <td class="p-2 text-center">293 UAH</td>
+                    <td class="p-2 text-center">293 UAH</td>
+                    <td class="p-2 text-center">293 UAH</td>
+                </tr>
+                <tr>
+                    <td class="p-2 text-center">293 UAH</td>
+                    <td class="p-2 text-center">293 UAH</td>
+                    <td class="p-2 text-center">293 UAH</td>
+                    <td class="p-2 text-center">293 UAH</td>
+                </tr>
+                <tr>
                     <td class="p-2 text-center">293 UAH</td>
                     <td class="p-2 text-center">293 UAH</td>
                     <td class="p-2 text-center">293 UAH</td>
