@@ -1,7 +1,8 @@
 <script>
     import "../app.css"
-    import Auth from  "./auth/+page.svelte"
-    import Dashboard from './dashboard/+page.svelte'
+    import Auth from  "./_auth/+page.svelte"
+    import Dashboard from './_dashboard/+page.svelte'
+    import Submit from './_submit/+page.svelte'
     import { invalidateAll } from '$app/navigation';
     import { initialize } from 'svelte-google-auth/client';
     import { authStage, email, authSuccess } from '$lib/store.js'
@@ -15,7 +16,8 @@
     onMount(()=>pageProtection())
 </script>
 
-<div class="max-sm:h-full h-svh bg-gray-900 text-white dark:bg-purple-4 dark:text-gray-100">
+<div class="max-sm:h-full bg-gray-900 text-white dark:bg-purple-4 dark:text-gray-100">
+    <Submit/>
     {#if $authStage}
     <Auth/>
     {/if}
