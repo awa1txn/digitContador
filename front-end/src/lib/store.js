@@ -6,3 +6,6 @@ import { writable } from 'svelte/store';
 export const email = writable('');
 export const authStage = writable(false);
 export const authSuccess = writable(false);
+export const networth = writable([]);
+export const networthProgressLineChartArray = writable([])
+export const networthProgressLineChartDatesArray = writable([])
