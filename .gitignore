@@ -12,3 +12,5 @@
 
 /back-end/node_modules
 /back-end/.env
+
+/migrations/node_modules
