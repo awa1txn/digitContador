@@ -17,7 +17,7 @@
 </script>
 
 <div class="max-sm:h-full bg-gray-900 text-white dark:bg-purple-4 dark:text-gray-100">
-    <Submit/>
+    <!-- <Submit/> -->
     {#if $authStage}
     <Auth/>
     {/if}
