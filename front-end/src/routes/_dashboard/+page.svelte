@@ -5,6 +5,8 @@
     import apiClient from '$lib/apiClient';
     import { networth } from '$lib/store';
     import {sumNumbers, calculateDifference, getTwoLatestObjects, collectAllNetworths, collectAllDates} from '$lib/services.js'
+    import Submit from '../_submit/+page.svelte'
+
 
     import {
     Chart as ChartJS,
@@ -54,7 +56,7 @@
         pointHoverBorderWidth: 1,
         pointRadius: 1,
         pointHitRadius: 10,
-        data: [], // payload from the db that we show here after this equation: collectAllNetworths($networth).reverse()
+        data: [], // payload from the db that we show here after this FUNC: collectAllNetworths($networth).reverse()
         }
     ],
     };
@@ -80,7 +82,9 @@
 
 </script>
 
-
+{#if submitPopup}
+<Submit/>
+{/if}
 <main class="container mx-auto p-4 flex flex-col gap-10">
     <header class="bg-gray-800 text-white p-4">
         <p class="text-center text-green-500">Authorized in digitContador</p>
@@ -99,7 +103,7 @@
         <h2 class="text-white text-2xl text-center">CURRENT MONTH'S INCOME</h2>
         <h2 class="text-white text-4xl">{income>0 ? '📈':'📉'}</h2>
         <!-- svelte-ignore missing-declaration -->
-        <h2 class={`text-white text-xl ${income>0 ? 'text-green-300':'text-red-300'}`}>
+        <h2 class={`text-xl ${income>0 ? 'text-green-300':'text-red-300'}`}>
             {income>0 ? '+':''}{income} UAH
         </h2>
         <h3>NETWORTH</h3>

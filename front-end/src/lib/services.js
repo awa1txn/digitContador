@@ -24,6 +24,8 @@
     }
 
     export function calculateDifference(array) {
+        //CALCULATES DIFFER BETWEEN TWO LATEST NUMS IN ARRAY OF ALL NETWORTHS
+        //COULD BE POSITIVE OR NEGATIVE NUM AS WELL, OR ZERO.
         const sumFirst = sumNumbers(Object.values(array[0]).slice(1,4)) ;
         const sumSecond = sumNumbers(Object.values(array[1]).slice(1,4));
 
@@ -31,6 +33,7 @@
     }
 
     export function collectAllNetworths(array){
+        //RETURNS ONLY SUM OF CARD, CASH, CRYPTO NUMS USING sumNumbers()
         const sortedArray = array.sort((a,b)=> b.id - a.id);
         const slicedArray = sortedArray.slice(0,5);
         let newArray = []
@@ -41,6 +44,8 @@
     }
 
     export function collectAllDates(array){
+        //HERE WE COLLECT ALL DATES FROM ARRAY AND RETURN THEM IN SAME ARRAY BUT WITH SLICES FROM 0 TO 10.
+        //MEANING ONLY YEAR-MONTH-DAY FORMAT
         const sortedArray = array.sort((a,b)=> b.id - a.id);
         const slicedArray = sortedArray.slice(0,5);
         let newArray = []
