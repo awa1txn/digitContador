@@ -14,7 +14,7 @@
     onMount(()=>pageProtection())
 </script>
 
-<div class="max-sm:h-full bg-gray-900 text-white dark:bg-purple-4 dark:text-gray-100">
+<div class="max-sm:h-full bg-gray-900 dark:bg-white">
     {#if $authStage}
     <Auth/>
     {/if}

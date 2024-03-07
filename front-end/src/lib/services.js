@@ -29,7 +29,7 @@
         const sumFirst = sumNumbers(Object.values(array[0]).slice(1,4)) ;
         const sumSecond = sumNumbers(Object.values(array[1]).slice(1,4));
 
-        return sumFirst - sumSecond;
+        return (sumFirst - sumSecond).toFixed(2);
     }
 
     export function collectAllNetworths(array){
@@ -50,7 +50,9 @@
         const slicedArray = sortedArray.slice(0,5);
         let newArray = []
         slicedArray.map(el => {
+            console.log(Object.values(el))
             newArray.push(Object.values(el).slice(4,5)[0].slice(0,10))
         })
+        newArray.reverse()
         return newArray
     }

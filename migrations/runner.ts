@@ -21,9 +21,9 @@ async function createDatabase() {
 
     // Define your entity (table) with the required columns
     await connection.query(`
-      CREATE TABLE IF NOT EXISTS networth (
+      CREATE TABLE IF NOT EXISTS networths (
         id serial PRIMARY KEY,
-        date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        date VARCHAR(12),
         cash FLOAT,
         card FLOAT,
         crypto FLOAT

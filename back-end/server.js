@@ -6,7 +6,11 @@ import { Sequelize, DataTypes } from 'sequelize';
 const sequelize = new Sequelize('postgres', 'postgres', 'root', {
   host: 'localhost',
   dialect: 'postgres',
-});
+  define: {
+    timestamps: false, // Set this to false to exclude createdAt and updatedAt
+  }
+},
+);
 
 // Define the model for the 'networth' table
 const Networth = sequelize.define('networth', {
@@ -19,6 +23,9 @@ const Networth = sequelize.define('networth', {
   card: {
     type: DataTypes.FLOAT,
   },
+  date:{
+    type: DataTypes.STRING
+  }
 });
 
 sequelize.sync();
@@ -40,15 +47,19 @@ app.get('/owner', (req, res)=>{
 // Express route to handle POST requests
 app.post('/api/networth', async (req, res) => {
   try {
-    const { cash, crypto, card } = req.body;
+    const { cash, crypto, card, email, date } = req.body.data;
+
+    console.log(cash, crypto, card, date, email )
+    if(email !== 'daniil.shapovalov200247@gmail.com'){
+      return res.status(400).json({ error: 'You logged in via wrong email.' });
+    }
 
     // Validate that the required fields are present
     if (cash === undefined || card === undefined || crypto === undefined) {
       return res.status(400).json({ error: 'Cash, crypto, and card are required in the request body.' });
     }
-
     // Insert data into the 'networth' table
-    await Networth.create({ cash, crypto, card });
+    await Networth.create({ cash, crypto, card, date });
 
     return res.status(201).json({ message: 'Data inserted successfully.' });
   } catch (error) {

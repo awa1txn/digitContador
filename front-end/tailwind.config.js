@@ -6,11 +6,11 @@ export default {
   theme: {
     extend: {
       colors: {
-        purple:{
-          1: '#F9F4F5',
-          2: '#C8B8DB',
-          3: '#70587C',
-          4: '#502F4C',
+        bayck:{
+          1: '#e5e5e5',
+          2: '#fca311',
+          3: '#14213d',
+          4: '#fcbc52'
         }
       }
     },
